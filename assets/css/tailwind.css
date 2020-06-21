@@ -1,0 +1,15 @@
+
+/* purgecss start ignore */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+/* purgecss end ignore */
+@import 'tailwindcss/utilities';
+
+@font-face {
+    font-family: Montserrat-Extra-light;
+    src: url('../fonts/Montserrat-ExtraLight.otf');
+    src: url('../fonts/Montserrat-ExtraLight.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/Montserrat-ExtraLight.woff') format('woff'), /* Pretty Modern Browsers */
+    url('../fonts/Montserrat-ExtraLight.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
