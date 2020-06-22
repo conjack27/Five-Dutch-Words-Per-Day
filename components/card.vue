@@ -1,13 +1,12 @@
 <template>
-    <div class="card flip-card w-1/5 h-56 ml-2 mr-2">
-        <div class="flipper border border-white rounded   p-4 ">
-            <div class="front">
-                <h3 class="text-5xl text-white font-body text-center">{{ cardTitle }}</h3>
+    <div class="w-1/5 h-56 ml-2 mr-2" @click="flipped = !flipped">
+        <div class="flip-card border border-white rounded duration-500 relative h-full cursor-pointer" :class="{ 'flipped': flipped }">
+            <div class="flip-card__front p-4 absolute inline-block">
+                <h3 class="text-5xl text-white font-body text-center z-2">{{ cardTitle }}</h3>
             </div>
-            <div class="back">
-                <h1>John Doe</h1>
-                <p>Architect & Engineer</p>
-                <p>We love that guy</p>
+            <div class="flip-card__back text-white font-body text-center p-4 absolute top-0 left-0 h-full w-full inline-block">
+                <h3 class="text-2xl mb-2 font-bold">{{ translation }}</h3>
+                <p class="text-xl"> {{ example }}</p>
             </div>
         </div>
     </div>
@@ -21,51 +20,30 @@
             
         },
         data: () => ({
-            
+            flipped: false,
+            translation: "Translation",
+            example: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
         }),
         methods: {
-
         }
     };
 </script>
 
 <style>
     
-    /* entire container, keeps perspective */
-.flip-card {
-}
-
-/* flip the pane when clicked */
-.flip-card:hover .flipper, .flip-card.hover .flipper {
+.flipped {
   -webkit-transform: rotateY(180deg);
 }
 
-/* flip speed goes here */
-.flipper {
-	-webkit-transition: 0.6s;
+.flip-card {
 	-webkit-transform-style: preserve-3d;
-	position: relative;
-    width: 100%;
-    height: 100%;
 }
 
-/* hide back of pane during swap */
-.front, .back {
-	-webkit-backface-visibility: hidden;
-	position: absolute;
-	top: 0;
-	left: 0;
-    width: 100%;
-    height: 100%;
+.flip-card__front, .flip-card__back {
+	backface-visibility: hidden;
 }
 
-/* front pane, placed above back */
-.front {
-  z-index: 2;
-}
-
-/* back, initially hidden pane */
-.back {
+.flip-card__back {
   -webkit-transform: rotateY(180deg);
 }
 </style>

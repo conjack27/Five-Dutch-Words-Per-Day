@@ -9,6 +9,8 @@ module.exports = {
     fontFamily: {
       body: ['Montserrat-Extra-light', 'sans-serif'],
       heading: ['Montserrat-Extra-light', 'sans-serif']
+    },
+    extend: {
     }
   },
   variants: {},
