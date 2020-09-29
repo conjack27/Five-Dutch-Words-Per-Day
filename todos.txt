@@ -1,0 +1,4 @@
+ - function to get five words from the json sheet.
+    - setup store with axios calls
+    - Have a get 5 words API rather than getting all of them? 
+    - get the 
